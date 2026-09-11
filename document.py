@@ -17,7 +17,8 @@ class Document:
 
 
 class Schema:
-    field_configurations: dict[FieldName, FieldConfig]
+    def __init__(self, field_configurations: dict[FieldName, FieldConfig]):
+        self.field_configurations: dict[FieldName, FieldConfig] = field_configurations
 
     def get_searchable_fields(self) -> list[FieldName]:
         return [
