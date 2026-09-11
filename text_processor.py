@@ -19,7 +19,7 @@ class TextProcessor:
         filtered_tokens = [token for token in raw_tokens if token not in self.stop_words]
         return filtered_tokens
 
-    def process_document(document: Document, schema: Schema) -> dict[str, list[str]]:
+    def process_document(self, document: Document, schema: Schema) -> dict[str, list[str]]:
         processed_fields = {}
         for field_name in schema.get_searchable_fields():
             if field_name in document.fields:
